@@ -122,19 +122,8 @@ def load_bin(path: Path) -> Any:
     return data
 
 @ensure_annotations
-def get_size(path:Path) -> str: 
-    """
-    get size of file in KB
-
-    Args:
-        path (Path): path to file
-
-    Returns:
-        str: size of file
-    """
-    
-    size_in_kb = round(os.path.getsize(path)/1024)
-    return size_in_kb
+def get_size(path: Path) -> int:
+    return os.path.getsize(path)
 
 def decodeImage(imgstring, filename): 
     imgdata = base64.b64decode(imgstring)
